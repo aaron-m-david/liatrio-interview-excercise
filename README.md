@@ -1,2 +1,2 @@
 # liatrio-interview-excercise
-Excercise for Liatrio interview
+Exercise for Liatrio interview
