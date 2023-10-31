@@ -10,6 +10,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -
+                name: Run Tests
+                uses: liatrio/github-actions/apprentice-action@master
+            -
                 name: Checkout
                 uses: actions/checkout@v4 # Checkout repository so workflow can access it
             -
