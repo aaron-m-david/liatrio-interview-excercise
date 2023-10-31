@@ -28,4 +28,4 @@ jobs:
                     context: .
                     file: ./Dockerfile
                     push: true
-                    tags: liatrio-exercise:latest # Rename image
+                    tags: ${{ secrets.DOCKER_ID }}/liatrio-exercise:latest # Rename image
