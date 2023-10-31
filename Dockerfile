@@ -1,5 +1,5 @@
 # Declare image
-FROM node:14-alpine
+FROM node:alpine
 # Set working dir for app
 WORKDIR /home/liatrio_exercise/src
 # Copy all files from current dir to working dir in docker
