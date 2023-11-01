@@ -31,7 +31,7 @@ jobs:
                     tags: ${{ secrets.DOCKER_ID }}/liatrio-exercise:latest # Rename image
             -
                 name: Run App
-                run: docker run -p 80:80 -d --name liatrio-exercise ${{ secrets.DOCKERHUB_ID }}/liatrio-exercise:latest
+                run: docker run -p 80:80 -d --name liatrio-exercise ${{ secrets.DOCKER_ID }}/liatrio-exercise:latest
             -
                 name: Run Tests
                 uses: liatrio/github-actions/apprentice-action@808117af9b4a1e57c4cb79dbcb2d25de5ea3c68d
