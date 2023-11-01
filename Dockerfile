@@ -6,7 +6,7 @@ WORKDIR /home/liatrio_exercise/src
 COPY ./ ./
 #Get dependencies
 RUN npm install
-# App will listen on port 3000
-EXPOSE 3000
+# App will listen on port 80
+EXPOSE 80
 # Command to run app ie. node app.js
 CMD [ "node", "app.js" ]
