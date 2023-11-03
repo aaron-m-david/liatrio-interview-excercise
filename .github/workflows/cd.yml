@@ -1,0 +1,21 @@
+name: "cd"
+
+on:
+    push:
+        branches:
+          - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Set up Google SDK
+            uses: google-github-actions/setup-gcloud@master
+            with:
+                project_id: liatrio-exercise-02
+                service_account_key: ${{ secrets.GCP_SA_KEY }}
+                export_default_credentials: true
+            
+          - name: Configure Docker for GCP
+            run: gcloud auth configure-docker
+        
