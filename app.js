@@ -7,7 +7,8 @@ const port = 80
 // Send JSON response with message and timestamp
 app.get('/', (req, res) => {
     res.json({"message": "My name is Aaron",
-              "timestamp": Date.now()})
+              "timestamp": Date.now(),
+              "fullname": "Aaron David"})
 })
 
 app.listen(port)
