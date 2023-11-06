@@ -1,5 +1,5 @@
 name: ci
-
+# Trigger on Push to main
 on:
     push:
         branches:
