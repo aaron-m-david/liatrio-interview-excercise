@@ -8,7 +8,7 @@ const port = 80
 app.get('/', (req, res) => {
     res.json({"message": "My name is Aaron",
               "timestamp": Date.now(),
-              "fullname": "Aaron David"})
+              "fullname": "Aaron Michael David"})
 })
 
 app.listen(port)
