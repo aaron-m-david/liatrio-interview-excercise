@@ -9,6 +9,8 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
+          - uses: actions/checkout@v2
+
           - name: Set up Google SDK
             uses: google-github-actions/setup-gcloud@master
             with:
@@ -18,4 +20,12 @@ jobs:
             
           - name: Configure Docker for GCP
             run: gcloud auth configure-docker
-        
+
+          - name: Pull Docker Image
+            run: docker pull ${{ secrets.DOCKER_ID }}/liatrio-exercise
+          
+          - name: Tag Image
+            run: docker tag ${{ secrets.DOCKER_ID }}/liatrio-exercise gcr.io/liatrio-exercise-02/${{ secrets.DOCKER_ID }}/liatrio-exercise
+
+          - name: Deploy
+            run: gcloud run deploy amdavid --image=gcr.io/liatrio-exercise-02/${{ secrets.DOCKER_ID }}/liatrio-exercise --port=80 --region=us-west2 --platform=managed
