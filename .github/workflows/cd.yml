@@ -23,10 +23,10 @@ jobs:
             run: gcloud auth configure-docker
 
           - name: Pull Docker Image
-            run: docker pull ${{ secrets.DOCKER_ID }}/liatrio-exercise
+            run: docker pull ${{ secrets.DOCKER_ID }}/liatrio-exercise:latest
           
           - name: Tag Image
-            run: docker tag ${{ secrets.DOCKER_ID }}/liatrio-exercise gcr.io/liatrio-exercise-02/${{ secrets.DOCKER_ID }}/liatrio-exercise
+            run: docker tag ${{ secrets.DOCKER_ID }}/liatrio-exercise:latest gcr.io/liatrio-exercise-02/${{ secrets.DOCKER_ID }}/liatrio-exercise
 
           - name: Deploy
-            run: gcloud run deploy amdavid --image=gcr.io/liatrio-exercise-02/${{ secrets.DOCKER_ID }}/liatrio-exercise --port=80 --region=us-west2 --platform=managed
+            run: gcloud run deploy ${{ secrets.DOCKER_ID }} --image=gcr.io/liatrio-exercise-02/${{ secrets.DOCKER_ID }}/liatrio-exercise --port=80 --region=us-west2 --platform=managed
